@@ -1,0 +1,10 @@
+.dial {
+    width: 175px;
+    height: 175px;
+    border: solid 2px black;
+    border-radius: 10%;
+}
+
+.dial-arm {
+    transform-origin: bottom;
+}
