@@ -46,10 +46,12 @@ class RobotConnection extends React.Component {
 
         return (
             <div>
-                <span>{conn_state} to {this.state.address}</span>
-                <button type="button" className="btn btn-primary" onClick={this.handleClick}>
-                    Connect to {other_address}
-                </button>
+                <div>{conn_state} to {this.state.address}</div>
+                <div>
+                    <button type="button" className="btn btn-primary" onClick={this.handleClick}>
+                        Connect to {other_address}
+                    </button>
+                </div>
             </div>
         );
     }

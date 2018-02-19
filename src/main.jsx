@@ -13,11 +13,30 @@ import PreferencesTable from './components/prefs/PreferencesTable.jsx';
 function App({ store }) {
     return (
         <Provider store={store}>
-            <div>
-                <SwerveTableDisplay />
-                <RobotConnection />
-                <IMUInfo />
-                <PreferencesTable />
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-6">
+                        <SwerveTableDisplay />
+                    </div>
+                    <div className="col-2">
+                        <IMUInfo />
+                    </div>
+                    <div className="col-2">
+                        <IMUInfo />
+                    </div>
+                    <div className="col-2">
+                        <IMUInfo />
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col">
+                        <PreferencesTable />
+                    </div>
+                    <div className="col-2">
+                        <RobotConnection />
+                    </div>
+                    <div className="col-md-auto" id="camera"></div>
+                </div>
             </div>
         </Provider>
     );

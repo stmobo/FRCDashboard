@@ -1,0 +1,8 @@
+#camera {
+    width: 450px;
+    height: 450px;
+    padding: 0;
+    margin-right: 10px;
+    background-color: #333;
+    background-image: url('roborio-5002-frc.local:1181');
+}

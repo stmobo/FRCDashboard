@@ -6,13 +6,13 @@ function IMUStatus({present}) {
     if(present) {
         return (
             <div className="alert alert-success" role="alert">
-                IMU is <strong>present</strong>
+                IMU is <strong>present.</strong>
             </div>
         );
     } else {
         return (
             <div className="alert alert-danger" role="alert">
-                IMU is <strong>not present</strong>
+                IMU is <strong>not present.</strong>
             </div>
         );
     }
@@ -20,7 +20,7 @@ function IMUStatus({present}) {
 
 function IMUHeading({angle}) {
     return (
-        <input className="form-control" type="text" placeholder={angle.toString() + 'º'} readonly />
+        <input className="form-control" type="text" placeholder={angle.toString() + 'º'} readOnly />
     );
 }
 
