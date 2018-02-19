@@ -25,7 +25,7 @@ export default function SwerveTableDisplay({}) {
             <table className="table table-hover table-striped">
                 <thead>
                     <tr>
-                        <td></td>
+                        <td>Swerve Data</td>
                         <td>Front Left</td>
                         <td>Front Right</td>
                         <td>Back Left</td>
