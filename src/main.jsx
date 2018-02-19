@@ -15,7 +15,10 @@ function App({ store }) {
         <Provider store={store}>
             <div className="container-fluid">
                 <div className="row">
-                    <div className="col-6">
+                    <div className="col-3">
+                        <SwerveTableDisplay />
+                    </div>
+                    <div className="col-3">
                         <SwerveTableDisplay />
                     </div>
                     <div className="col-2">

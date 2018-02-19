@@ -22,7 +22,7 @@ export default function SwerveTableDisplay({}) {
 
     return (
         <div className="table-responsive swerve-table">
-            <table className="table table-hover table-striped">
+            <table className="table table-hover table-striped table-sm">
                 <thead>
                     <tr>
                         <td>Swerve Data</td>
