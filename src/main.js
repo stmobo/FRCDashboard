@@ -1,6 +1,8 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
 
+require('app-module-path').addPath(__dirname);
+
 const electron = require('electron');
 const wpilib_NT = require('wpilib-nt-client');
 const client = new wpilib_NT.Client();
@@ -43,7 +45,6 @@ let clientDataListener = (key, val, valType, mesgType, id, flags) => {
 function createWindow() {
     // Attempt to connect to the localhost
     client.start((con, err) => {
-
         let connectFunc = () => {
             console.log('Sending status');
             mainWindow.webContents.send('connected', con);
@@ -57,6 +58,7 @@ function createWindow() {
         }
         connectedFunc = connectFunc;
     });
+
     // When the script starts running in the window set the ready variable
     ipc.on('ready', (ev, mesg) => {
         console.log('NetworkTables is ready');
@@ -71,6 +73,7 @@ function createWindow() {
         // Send connection message to the window if if the message is ready
         if (connectedFunc) connectedFunc();
     });
+
     // When the user chooses the address of the bot than try to connect
     ipc.on('connect', (ev, address, port) => {
         console.log(`Trying to connect to ${address}` + (port ? ':' + port : ''));
@@ -84,15 +87,19 @@ function createWindow() {
             client.start(callback, address);
         }
     });
+
     ipc.on('add', (ev, mesg) => {
         client.Assign(mesg.val, mesg.key, (mesg.flags & 1) === 1);
     });
+
     ipc.on('update', (ev, mesg) => {
         client.Update(mesg.id, mesg.val);
     });
+
     ipc.on('error', (ev, error) => {
         console.log(error);
     });
+
     // Create the browser window.
     mainWindow = new BrowserWindow({
         width: 1366,
@@ -103,6 +110,7 @@ function createWindow() {
         show: false,
         icon: __dirname + '/../images/icon.png'
     });
+
     // Move window to top (left) of screen.
     mainWindow.setPosition(0, 0);
     // Load window.
@@ -126,13 +134,16 @@ function createWindow() {
         connectedFunc = null;
         client.removeListener(clientDataListener);
     });
+
     mainWindow.on('unresponsive', () => {
         console.log('Main Window is unresponsive');
     });
+
     mainWindow.webContents.on('did-fail-load', () => {
         console.log('window failed load');
     });
 }
+
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 app.on('ready', () => {

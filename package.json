@@ -4,6 +4,7 @@
   "description": "Robot control dashboard boilerplate for FRC.",
   "main": "src/main.js",
   "scripts": {
+    "build": "gulp build",
     "start": "electron .",
     "package-mac": "electron-packager . --platform=darwin --icon=images/icon.icns --out dist/",
     "package-linux": "electron-packager . --platform=linux --icon=images/icon.png --out dist/",
@@ -11,19 +12,52 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FRCDashboard/FRCDashboard"
+    "url": "git+https://github.com/stmobo/FRCDashboard"
   },
-  "author": "Erik Boesen",
+  "author": "Sebastian Mobo <stmobo@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FRCDashboard/FRCDashboard/issues"
+    "url": "https://github.com/stmobo/FRCDashboard/issues"
   },
   "homepage": "http://frcdashboard.github.io",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babelify": "^8.0.0",
+    "browserify": "^16.1.0",
     "electron": "^1.7.12",
-    "electron-packager": "^10.1.1"
+    "electron-packager": "^10.1.1",
+    "electron-rebuild": "^1.7.3",
+    "gulp": "^3.9.1",
+    "gulp-streamify": "^1.0.2",
+    "gulp-util": "^3.0.8",
+    "uglifyify": "^4.0.5",
+    "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "app-module-path": "^2.2.0",
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.0.0",
+    "envify": "^4.1.0",
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9",
+    "pump": "^3.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "uglify-es": "^3.3.9",
     "wpilib-nt-client": "^1.7.0"
+  },
+  "babel": {
+    "presets": [
+      "stage-0",
+      "react",
+      "env"
+    ]
   }
 }
