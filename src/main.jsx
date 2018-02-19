@@ -8,6 +8,7 @@ import { store } from './networktables/redux-store.js';
 import SwerveTableDisplay from './components/swerve/SwerveTableDisplay.jsx';
 import RobotConnection from './components/RobotConnection.jsx';
 import IMUInfo from './components/imu/IMUInfo.jsx';
+import PreferencesTable from './components/prefs/PreferencesTable.jsx';
 
 function App({ store }) {
     return (
@@ -16,6 +17,7 @@ function App({ store }) {
                 <SwerveTableDisplay />
                 <RobotConnection />
                 <IMUInfo />
+                <PreferencesTable />
             </div>
         </Provider>
     );

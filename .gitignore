@@ -63,3 +63,5 @@ package-lock.json
 .vscode/
 
 src/built-js
+*.ini
+*.ini.bak
